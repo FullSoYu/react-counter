@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Counter({ counter, setCounter }) {
   const onClickFunc = () => {
     setCounter(counter + 1);
   };
+
+  console.log("counter");
+  useEffect(() => {
+    console.log("API호출");
+  }, []);
 
   return (
     <div>
@@ -11,7 +16,6 @@ function Counter({ counter, setCounter }) {
       <button onClick={onClickFunc}>+</button>
     </div>
   );
-  return;
 }
 
 export default Counter;
